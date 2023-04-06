@@ -50,16 +50,19 @@ while count_balance <= 6:
             used_letters.append(guess)
 
         # checks each letter in stored letters with the guessed letter
-        for i in range(len(stored_letters)):
+        else:
+            used_letters.append(guess)
 
-            # accepts both lowercase and uppercase inputs
-            if (
-                stored_letters[i] == guess
-                or stored_letters[i] == guess.upper()
-                or stored_letters[i] == guess.lower()
-            ):
-                used_letters.append(guess)
-                guessed_word[i] = stored_letters[i]
+            for i in range(len(stored_letters)):
+
+                # accepts both lowercase and uppercase inputs
+                if (
+                    stored_letters[i] == guess
+                    or stored_letters[i] == guess.upper()
+                    or stored_letters[i] == guess.lower()
+                ):
+                    
+                    guessed_word[i] = stored_letters[i]
 
         if guessed_word == stored_letters:
             print("You guessed the word {} !".format("".join(guessed_word)))
