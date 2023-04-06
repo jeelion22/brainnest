@@ -23,7 +23,7 @@ You guessed the word java !
 
 """
 
-stored_letters = list("java")  # converts string to list
+# stored_letters = list("java")  # converts string to list
 guessed_word = len(stored_letters) * ["_"]
 used_letters = list()
 
