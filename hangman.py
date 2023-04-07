@@ -43,7 +43,7 @@ while True:
             continue
 
         # decrements the no.of tries if the guess is wrong or for repeated letter input
-        if guess not in stored_letters or guess in used_letters:
+        if guess not in stored_letters or guess in guessed_word:
             count_balance -= 1
             if count_balance < 1:
                 break
@@ -63,7 +63,7 @@ while True:
             break
 
     except Exception as e:
-        print(str(e))
+        print("Something went wrong, please try again.")
 
 
 # return the messeage if the guess is incorrect
