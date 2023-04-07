@@ -30,7 +30,7 @@ used_letters = list()
 
 count_balance = 6
 
-while count_balance <= 6:
+while True:
     try:
         print("\nYou have {} tries left.".format(count_balance))
         print("Used letters: {}".format(" ".join(used_letters)))
@@ -42,8 +42,8 @@ while count_balance <= 6:
             print("Only one char is allowed")
             continue
 
-        # decrements the no.of tries if the guess is wrong
-        if guess not in stored_letters:
+        # decrements the no.of tries if the guess is wrong or for repeated letter input
+        if guess not in stored_letters or guess in guessed_word:
             count_balance -= 1
             if count_balance < 1:
                 break
@@ -55,11 +55,7 @@ while count_balance <= 6:
 
             for i in range(len(stored_letters)):
                 # accepts both lowercase and uppercase inputs
-                if (
-                    stored_letters[i] == guess
-                    or stored_letters[i] == guess.upper()
-                    or stored_letters[i] == guess.lower()
-                ):
+                if stored_letters[i].upper() == guess.upper():
                     guessed_word[i] = stored_letters[i]
 
         if guessed_word == stored_letters:
@@ -67,7 +63,7 @@ while count_balance <= 6:
             break
 
     except Exception as e:
-        print(str(e))
+        print("Something went wrong, please try again.")
 
 
 # return the messeage if the guess is incorrect
