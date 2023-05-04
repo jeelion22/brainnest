@@ -6,7 +6,7 @@ possible keys for the Caesar cipher, so a computer can easily try all possible d
 """
 
 
-def decryptCaesarCipher():
+def decrypt_caesar_cipher():
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     usr_msge = input("Enter the message to decrypt.\n").upper()
@@ -30,4 +30,4 @@ def decryptCaesarCipher():
         print(decrypted_msge)
 
 
-decryptCaesarCipher()
+decrypt_caesar_cipher()
